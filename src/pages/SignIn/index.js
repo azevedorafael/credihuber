@@ -8,7 +8,7 @@ import { Container, Form, FormInput, SubmitButton } from './styles';
 export default function SignIn() {
   return (
     <Container>
-      <Image source={logo} style={{ width: 100, height: 100 }} />
+      <Image source={logo} style={{ width: 150, height: 150 }} />
 
       <Form>
         <FormInput
