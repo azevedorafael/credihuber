@@ -1,15 +1,13 @@
 import { createAppContainer, createSwitchNavigator } from 'react-navigation';
 
 import SignIn from './pages/SignIn';
-import Main from './pages/Main';
-import User from './pages/User';
+import Repositories from './pages/Repositories';
 
 const Routes = createAppContainer(
   createSwitchNavigator(
     {
       SignIn,
-      Main,
-      User,
+      Repositories,
     },
     {
       headerLayoutPreset: 'center',
