@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import { View, Text, ActivityIndicator, FlatList } from 'react-native';
+import { View, FlatList } from 'react-native';
 import AsyncStorage from "@react-native-community/async-storage";
 
 import api from '~/services/api';
 
 import RepositoryItem from "./RepositoryItem";
-import styles from './styles';
+import {Loader} from './styles'
 
 AsyncStorage.clear();
 
@@ -43,7 +43,7 @@ export default class Repositories extends Component {
     return (
       <View>
         {loading ? (
-          <ActivityIndicator style={styles.loading} />
+          <Loader />
         ) : (
           this.renderList()
         )}

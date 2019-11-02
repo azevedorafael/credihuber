@@ -1,65 +1,53 @@
-import { StyleSheet } from 'react-native';
-import { colors, metrics } from '~/styles';
+import styled from 'styled-components/native';
 
-const styles = StyleSheet.create({
-  container: {
-    backgroundColor: colors.white,
-    borderWidth: 0.5,
-    borderRadius: metrics.borderRadius,
-    padding: metrics.basePadding,
-    marginHorizontal: metrics.baseMargin * 2,
-    marginTop: metrics.baseMargin,
-  },
+export const Container = styled.View`
+  background: #fff;
+  border-width: 0.5;
+  border-radius: 3;
+  padding: 20px;
+  margin: 5px 20px 30px;
+`;
 
-  title: {
-    fontSize: 14,
-    fontWeight: 'bold',
-    marginHorizontal: metrics.baseMargin * 2,
-    marginTop: metrics.baseMargin * 4,
-  },
+export const Title = styled.Text`
+  font-size: 14;
+  font-weight: bold;
+  padding: 5px 20px 5px;
+`;
 
-  mainContainer: {
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'space-between',
-  },
+export const MainContainer = styled.View`
+  flex-direction: column;
+  justify-content: space-between;
+`;
 
-  infoContainer: {
-    flexDirection: 'row',
-    marginTop: metrics.baseMargin,
-  },
+export const InfoContainer = styled.View`
+  flex-direction: row;
+  margin-top: 10px;
+`;
 
-  buttonContainer: {
-    flexDirection: 'row',
-    justifyContent: 'flex-end',
-    marginTop: metrics.baseMargin,
-  },
+export const Info = styled.View`
+  flex-direction: column;
+  margin-right: 10px;
+  align-items: center;
+  justify-content: center;
+`;
 
-  info: {
-    flexDirection: 'column',
-    marginRight: metrics.baseMargin,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
+export const InfoText = styled.Text`
+  color: #000;
+  font-size: 12;
+  margin-left: 10px;
+`;
 
-  infoIcon: {
-    color: colors.dark,
-  },
+export const ButtonContainer = styled.View`
+  flex-direction: row;
+  justify-content: flex-end;
+  margin-top: 10px;
+`;
 
-  infoText: {
-    color: colors.dark,
-    fontSize: 12,
-    marginLeft: metrics.baseMargin / 2,
-  },
-
-  button: {
-    backgroundColor: colors.primary,
-    borderRadius: metrics.baseRadius,
-    width: 80,
-    height: 30,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-});
-
-export default styles;
+export const Button = styled.TouchableOpacity`
+  background: #19b3ae;
+  border-radius: 3;
+  width: 80px;
+  height: 30px;
+  justify-content: center;
+  align-items: center;
+`;

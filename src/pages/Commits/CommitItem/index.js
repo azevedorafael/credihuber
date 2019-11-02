@@ -1,17 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { View, Text, TouchableOpacity, Image } from 'react-native';
+import { Image } from 'react-native';
 import { withNavigation } from 'react-navigation';
-import Icon from 'react-native-vector-icons/FontAwesome';
 
-import styles from './styles';
+import { Container, Text } from './styles';
 
 const CommitItem = ({ commit, navigation }) => (
-  <View style={styles.container}>
+  <Container>
     <Image source={{ uri: commit.commit.committer.avatar_url }} />
-    <Text style={styles.title}>{commit.commit.message}</Text>
-  </View>
+    <Text>{commit.commit.message}</Text>
+  </Container>
 );
 
 CommitItem.propTypes = {

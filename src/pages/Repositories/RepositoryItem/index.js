@@ -1,38 +1,45 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { View, Text, TouchableOpacity } from 'react-native';
+import { Text } from 'react-native';
 import { withNavigation } from 'react-navigation';
-import Icon from 'react-native-vector-icons/FontAwesome';
 
-import styles from './styles';
+import {
+  Title,
+  Container,
+  MainContainer,
+  InfoContainer,
+  Info,
+  InfoText,
+  ButtonContainer,
+  Button,
+} from './styles';
 
 const RepositoryItem = ({ repository, navigation }) => (
   <>
-    <Text style={styles.title}>{repository.name}</Text>
+    <Title>{repository.name}</Title>
 
-    <View style={styles.container}>
-      <View style={styles.mainContainer}>
-        <View style={styles.infoContainer}>
-          <View style={styles.info}>
-            <Text style={styles.infoText}>{repository.description}</Text>
-          </View>
-        </View>
+    <Container>
+      <MainContainer>
+        <InfoContainer>
+          <Info>
+            <InfoText>{repository.description}</InfoText>
+          </Info>
+        </InfoContainer>
 
-        <View style={styles.buttonContainer}>
-          <TouchableOpacity
-            style={styles.button}
+        <ButtonContainer>
+          <Button
             onPress={() =>
               navigation.navigate('Commits', {
                 name: repository.name,
               })
             }
           >
-            <Text style={styles.buttonText}>Commits</Text>
-          </TouchableOpacity>
-        </View>
-      </View>
-    </View>
+            <Text>Commits</Text>
+          </Button>
+        </ButtonContainer>
+      </MainContainer>
+    </Container>
   </>
 );
 

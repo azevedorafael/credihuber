@@ -1,33 +1,17 @@
-import { StyleSheet } from 'react-native';
-import { metrics } from '~/styles';
+import styled from 'styled-components/native';
+import Icon from 'react-native-vector-icons/FontAwesome';
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1
-  },
+export const Input = styled.TextInput`
+  margin: 10px;
+`;
 
-  loading: {
-    marginTop: metrics.baseMargin * 10
-  },
+export const StyledIcon = styled(Icon).attrs({
+  name: props => props.name,
+  size: props => props.size,
+})`
+  margin: 20px;
+`;
 
-  icon: {
-    marginTop: metrics.baseMargin,
-    marginRight: metrics.baseMargin,
-    marginLeft: metrics.baseMargin
-  },
-
-  input: {
-    marginTop: metrics.baseMargin,
-    marginRight: metrics.baseMargin,
-    marginLeft: metrics.baseMargin,
-    padding: metrics.basePadding / 10,
-    paddingHorizontal: 20,
-    fontSize: 16,
-    color: '#444',
-    borderBottomWidth: 1,
-    borderColor: '#ddd',
-    backgroundColor: '#F5F5F5'
-  }
-});
-
-export default styles;
+export const Loader = styled.ActivityIndicator`
+  margin-top: 20px;
+`;

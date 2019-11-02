@@ -1,14 +1,5 @@
-import { StyleSheet } from 'react-native';
-import { metrics } from '~/styles';
+import styled from 'styled-components/native';
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-
-  loading: {
-    marginTop: metrics.baseMargin * 10,
-  },
-});
-
-export default styles;
+export const Loader = styled.ActivityIndicator`
+  margin-top: 20px;
+`;

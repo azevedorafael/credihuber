@@ -1,21 +1,15 @@
-import { StyleSheet } from 'react-native';
-import { colors, metrics } from '~/styles';
+import styled from 'styled-components/native';
 
-const styles = StyleSheet.create({
-  container: {
-    backgroundColor: colors.white,
-    borderRadius: metrics.borderRadius,
-    borderWidth: 0.5,
-    flexDirection: 'row',
-    padding: metrics.basePadding,
-    marginHorizontal: metrics.baseMargin * 2,
-    marginTop: metrics.baseMargin,
-  },
+export const Container = styled.View`
+  background-color: #fff;
+  border-radius: 3;
+  border-width: 0.5;
+  flex-direction: row;
+  padding: 20px;
+  margin: 10px 20px;
+`;
 
-  title: {
-    fontSize: 14,
-    fontWeight: 'bold',
-  },
-});
-
-export default styles;
+export const Text = styled.Text`
+  font-size: 14;
+  font-weight: bold;
+`;

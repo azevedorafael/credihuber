@@ -2,19 +2,15 @@ import React, { Component } from 'react';
 
 import {
   View,
-  Text,
   FlatList,
-  ActivityIndicator,
   TouchableOpacity,
-  TextInput
 } from 'react-native';
 import { withNavigation } from "react-navigation";
-import Icon from 'react-native-vector-icons/FontAwesome';
-import AsyncStorage from '@react-native-community/async-storage';
 
 import CommitItem from "./CommitItem";
-import styles from './styles';
+import {Input, StyledIcon,Loader} from './styles';
 import api from "~/services/api";
+
 
 class Commits extends Component {
   state = {
@@ -44,10 +40,9 @@ class Commits extends Component {
     return (
       <>
         <TouchableOpacity onPress={this.back}>
-          <Icon name="arrow-left" size={24} style={styles.icon} />
+          <StyledIcon name="arrow-left" size={24}  />
         </TouchableOpacity>
-        <TextInput
-          style={styles.input}
+        <Input
           placeholder={"Live search"}
           onChangeText={text => {
             this.setState({ search: text });
@@ -76,7 +71,7 @@ class Commits extends Component {
     return (
       <View>
         {loading ? (
-          <ActivityIndicator style={styles.loading} />
+          <Loader />
         ) : (
           this.renderList()
         )}
