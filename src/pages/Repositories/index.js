@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
-import { View, FlatList } from 'react-native';
+import { View, Image,FlatList } from 'react-native';
 import AsyncStorage from "@react-native-community/async-storage";
 
 import api from '~/services/api';
 
 import RepositoryItem from "./RepositoryItem";
 import {Loader} from './styles'
+
+import logo from '~/assets/logo_small.png';
 
 AsyncStorage.clear();
 
@@ -29,11 +31,14 @@ export default class Repositories extends Component {
     const { data } = this.state;
 
     return (
+      <>
+      <Image source={logo} style={{ alignSelf: 'center',width: 250, height: 100 }} />
       <FlatList
         data={data}
         keyExtractor={item => String(item.id)}
         renderItem={({ item }) => <RepositoryItem repository={item} />}
       />
+      </>
     );
   };
 

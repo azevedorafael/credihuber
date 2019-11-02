@@ -1,14 +1,16 @@
 import React, { Component } from 'react';
 
+import logo from '~/assets/logo_small.png';
+
 import {
+  Image,
   View,
   FlatList,
-  TouchableOpacity,
 } from 'react-native';
 import { withNavigation } from "react-navigation";
 
 import CommitItem from "./CommitItem";
-import {Input, StyledIcon,Loader} from './styles';
+import {Header, Input, StyledIcon,Loader} from './styles';
 import api from "~/services/api";
 
 
@@ -39,9 +41,10 @@ class Commits extends Component {
 
     return (
       <>
-        <TouchableOpacity onPress={this.back}>
+        <Header onPress={this.back}>
           <StyledIcon name="arrow-left" size={24}  />
-        </TouchableOpacity>
+          <Image source={logo} style={{ alignSelf: 'center',width: 250, height: 100 }} />
+        </Header>
         <Input
           placeholder={"Live search"}
           onChangeText={text => {
