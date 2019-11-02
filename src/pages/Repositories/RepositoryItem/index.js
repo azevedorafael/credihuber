@@ -46,9 +46,10 @@ const RepositoryItem = ({ repository, navigation }) => (
 RepositoryItem.propTypes = {
   repository: PropTypes.shape({
     name: PropTypes.string,
-    stargazers_count: PropTypes.number,
-    forks_count: PropTypes.number,
-    watchers_count: PropTypes.number,
+    description: PropTypes.string,
+  }).isRequired,
+  navigation: PropTypes.shape({
+    navigate: PropTypes.func,
   }).isRequired,
 };
 

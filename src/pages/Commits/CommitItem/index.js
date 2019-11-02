@@ -1,21 +1,23 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { Image } from 'react-native';
 import { withNavigation } from 'react-navigation';
 
-import { Container, Text } from './styles';
+import { MainContainer, CommitContainer, Text, OwnerAvatar } from './styles';
 
-const CommitItem = ({ commit, navigation }) => (
-  <Container>
-    <Image source={{ uri: commit.commit.committer.avatar_url }} />
-    <Text>{commit.commit.message}</Text>
-  </Container>
+const CommitItem = ({ commit }) => (
+  <MainContainer>
+    <OwnerAvatar source={{ uri: commit.commit.committer.avatar_url }} />
+    <CommitContainer>
+      <Text>{commit.commit.message}</Text>
+    </CommitContainer>
+  </MainContainer>
 );
 
 CommitItem.propTypes = {
   commit: PropTypes.shape({
     message: PropTypes.string,
+    commit: PropTypes.string,
   }).isRequired,
 };
 
