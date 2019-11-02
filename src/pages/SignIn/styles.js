@@ -23,6 +23,11 @@ export const FormInput = styled(Input)`
   margin-bottom: 10px;
 `;
 
+export const ButtonContainer = styled.View`
+  align-items: center;
+  justify-content: center;
+`;
+
 export const SubmitButton = styled(Button)`
   margin-top: 5px;
 `;

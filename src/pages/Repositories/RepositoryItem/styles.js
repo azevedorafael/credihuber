@@ -3,7 +3,8 @@ import { colors, metrics } from '~/styles';
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: '#ffd',
+    backgroundColor: colors.white,
+    borderWidth: 0.5,
     borderRadius: metrics.borderRadius,
     padding: metrics.basePadding,
     marginHorizontal: metrics.baseMargin * 2,
@@ -13,11 +14,13 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 14,
     fontWeight: 'bold',
+    marginHorizontal: metrics.baseMargin * 2,
+    marginTop: metrics.baseMargin * 4,
   },
 
   mainContainer: {
     display: 'flex',
-    flexDirection: 'row',
+    flexDirection: 'column',
     justifyContent: 'space-between',
   },
 
@@ -28,13 +31,15 @@ const styles = StyleSheet.create({
 
   buttonContainer: {
     flexDirection: 'row',
+    justifyContent: 'flex-end',
     marginTop: metrics.baseMargin,
   },
 
   info: {
-    flexDirection: 'row',
+    flexDirection: 'column',
     marginRight: metrics.baseMargin,
     alignItems: 'center',
+    justifyContent: 'center',
   },
 
   infoIcon: {

@@ -8,7 +8,13 @@ import logo from '~/assets/logo.png';
 
 import { signInRequest } from '~/store/modules/auth/actions';
 
-import { Container, Form, FormInput, SubmitButton } from './styles';
+import {
+  Container,
+  Form,
+  FormInput,
+  ButtonContainer,
+  SubmitButton,
+} from './styles';
 
 export default function SignIn({ navigation }) {
   const dispatch = useDispatch();
@@ -52,9 +58,11 @@ export default function SignIn({ navigation }) {
           onChangeText={setPassword}
         />
 
-        <SubmitButton loading={loading} onPress={handleSubmit}>
-          Next
-        </SubmitButton>
+        <ButtonContainer>
+          <SubmitButton loading={loading} onPress={handleSubmit}>
+            Next
+          </SubmitButton>
+        </ButtonContainer>
       </Form>
     </Container>
   );
