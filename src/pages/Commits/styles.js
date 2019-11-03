@@ -21,3 +21,8 @@ export const StyledIcon = styled(Icon).attrs({
 export const Loader = styled.ActivityIndicator`
   margin-top: 20px;
 `;
+
+export const Title = styled.Text`
+  font-size: 18px;
+  align-self: center;
+`;

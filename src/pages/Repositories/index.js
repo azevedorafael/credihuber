@@ -5,7 +5,7 @@ import AsyncStorage from "@react-native-community/async-storage";
 import api from '~/services/api';
 
 import RepositoryItem from "./RepositoryItem";
-import {Loader} from './styles'
+import {Loader, Input} from './styles'
 
 import logo from '~/assets/logo_small.png';
 
@@ -15,10 +15,11 @@ export default class Repositories extends Component {
   state = {
     data: [],
     loading: true,
+    search: null,
   };
 
   async componentDidMount() {
-    const { data } = await api.get(`/users/azevedorafael/repos`);
+    const { data } = await api.get(`/users/creditas/repos`);
 
     this.setState({ data, loading: false });
   }
@@ -33,8 +34,22 @@ export default class Repositories extends Component {
     return (
       <>
       <Image source={logo} style={{ alignSelf: 'center',width: 250, height: 100 }} />
+      <Input
+          placeholder={"Repository Search"}
+          onChangeText={text => {
+            this.setState({ search: text });
+          }}
+          value={this.state.search}
+        />
       <FlatList
-        data={data}
+          data={data.filter(repo => {
+            return (
+              !this.state.search ||
+              repo.name
+                .toLowerCase()
+                .indexOf(this.state.search.toLowerCase()) > -1
+            );
+          })}
         keyExtractor={item => String(item.id)}
         renderItem={({ item }) => <RepositoryItem repository={item} />}
       />
