@@ -11,10 +11,10 @@ export const Input = styled.TextInput`
   margin: 10px;
 `;
 
-export const StyledIcon = styled(Icon).attrs({
-  name: props => props.name,
-  size: props => props.size,
-})`
+export const StyledIcon = styled(Icon).attrs(props => ({
+  name: props.name,
+  size: props.size,
+}))`
   margin: 20px;
 `;
 

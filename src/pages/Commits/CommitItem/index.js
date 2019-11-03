@@ -17,7 +17,13 @@ const CommitItem = ({ commit }) => (
 CommitItem.propTypes = {
   commit: PropTypes.shape({
     message: PropTypes.string,
-    commit: PropTypes.string,
+    commit: PropTypes.shape({
+      commit: PropTypes.string,
+      message: PropTypes.string,
+      committer: PropTypes.shape({
+        avatar_url: PropTypes.string,
+      }),
+    }),
   }).isRequired,
 };
 
