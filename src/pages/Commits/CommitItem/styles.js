@@ -23,6 +23,6 @@ export const Text = styled.Text`
 export const OwnerAvatar = styled.Image`
   height: 60px;
   width: 60px;
-  border-radius: 21px;
+  border-radius: 30px;
   background: #eee;
 `;
